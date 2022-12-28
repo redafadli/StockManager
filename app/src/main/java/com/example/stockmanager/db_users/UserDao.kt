@@ -1,4 +1,4 @@
-package com.example.stockmanager.db
+package com.example.stockmanager.db_users
 
 import androidx.room.*
 
@@ -15,8 +15,8 @@ interface UserDao {
     fun insertUser(vararg listCategories: UserRecord)
 
     @Update
-    fun updateDevice(task: UserRecord)
+    fun updateUser(task: UserRecord)
 
     @Delete
-    fun deleteDevice(task: UserRecord)
+    fun deleteUser(task: UserRecord)
 }

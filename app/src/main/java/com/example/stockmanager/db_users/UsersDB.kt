@@ -1,4 +1,4 @@
-package com.example.stockmanager.db
+package com.example.stockmanager.db_users
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

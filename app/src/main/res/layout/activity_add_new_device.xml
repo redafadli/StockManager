@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.AddNewDevice">
+    tools:context=".activity.AddNewDevice">
 
     <TextView
         android:id="@+id/textView5"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/marque_modele"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/marque_modele" />
 
     <TextView
         android:id="@+id/textView9"
@@ -85,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/num_ref" />
 
     <TextView
         android:id="@+id/textView10"
@@ -96,10 +96,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/site_web" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/num_ref"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/site_web"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -127,7 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/qr_code"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add_device_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"

@@ -1,10 +1,10 @@
-package com.example.stockmanager.db
+package com.example.stockmanager.db_users
 
 class User() {
 
     var id : Int = 0
-    var login = "null"
-    var pwd : String = "null"
+    var login = ""
+    var pwd : String = ""
 
     constructor(i : Int, l: String, p: String) : this() {
         id = i
@@ -15,8 +15,7 @@ class User() {
     override fun toString() : String {
         val string = StringBuilder()
 
-        string.append("ID : " + id.toString() +
-            "\n" +
+        string.append("ID : " + id.toString() + "\n" +
             "Login : " + login + "\n" +
             "Password : " + pwd)
 

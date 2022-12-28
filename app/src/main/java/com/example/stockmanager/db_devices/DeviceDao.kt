@@ -1,22 +1,22 @@
-package com.example.stockmanager.db_users
+package com.example.stockmanager.db_devices
 
 import androidx.room.*
 
 @Dao
-interface UserDao {
+interface DeviceDao {
 
-    @Query("SELECT * FROM UserTable")
-    fun getAllUsers(): List<UserRecord>
+    @Query("SELECT * FROM DeviceTable")
+    fun getAllDevices(): List<DeviceRecord>
 
-    @Query("SELECT * FROM UserTable WHERE login = :login")
-    fun getUser(login: String): UserRecord
+    @Query("SELECT * FROM DeviceTable WHERE num_ref = :ref")
+    fun getDevice(ref: String): DeviceRecord
 
     @Insert
-    fun insertUser(vararg listCategories: UserRecord)
+    fun insertDevice(vararg listCategories: DeviceRecord)
 
     @Update
-    fun updateDevice(task: UserRecord)
+    fun updateDevice(task: DeviceRecord)
 
     @Delete
-    fun deleteDevice(task: UserRecord)
+    fun deleteDevice(task: DeviceRecord)
 }

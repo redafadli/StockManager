@@ -1,10 +1,10 @@
-package com.example.stockmanager.db_users
+package com.example.stockmanager.db_devices
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-@Database(entities = [ (UserRecord::class) ], version = 2)
-abstract class UsersDB : RoomDatabase(){
+@Database(entities = [ (DeviceRecord::class) ], version = 1)
+abstract class DevicesDB : RoomDatabase(){
 
-    abstract fun userDao(): UserDao
+    abstract fun deviceDao(): DeviceDao
 }
