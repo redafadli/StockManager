@@ -36,8 +36,6 @@ class AddNewDevice : AppCompatActivity() {
                 lire()
             }
         }
-
-
     }
 
     private fun ecrire() {
@@ -49,7 +47,8 @@ class AddNewDevice : AppCompatActivity() {
             applicationContext, DevicesDB::class.java, "DeviceTable"
         ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
         val dao = db.deviceDao()
-        val d1 = DeviceRecord(0)
+        val d1 = DeviceRecord(device.type, device.marque_modele, device.num_ref, device.site_web,
+            device.qr_code)
         dao.insertDevice(d1)
         Toast.makeText(this, device.toString(), Toast.LENGTH_LONG).show()
     }

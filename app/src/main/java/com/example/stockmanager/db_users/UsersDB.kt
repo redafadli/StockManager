@@ -3,7 +3,7 @@ package com.example.stockmanager.db_users
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-@Database(entities = [ (UserRecord::class) ], version = 2)
+@Database(entities = [ (UserRecord::class) ], version = 3)
 abstract class UsersDB : RoomDatabase(){
 
     abstract fun userDao(): UserDao

@@ -19,7 +19,7 @@ class SignUp : AppCompatActivity() {
         sign_up_button.setOnClickListener {
             if (email.toString().isNotEmpty()) {
                 ecrire()
-                lire()
+//                lire()
             }
         }
     }
@@ -28,21 +28,20 @@ class SignUp : AppCompatActivity() {
         val u = User(0, email.text.toString(), pass.text.toString())
         val db = Room.databaseBuilder(
             applicationContext, UsersDB::class.java, "UserTable"
-        ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
+        ).allowMainThreadQueries().build()
         val dao = db.userDao()
-        val u1 = UserRecord(0)
+        val u1 = UserRecord(u.login, u.pwd)
         dao.insertUser(u1)
         Toast.makeText(this, u.toString(), Toast.LENGTH_LONG).show()
     }
 
-    private fun lire() {
-
-        val db = Room.databaseBuilder(
-            applicationContext,
-            UsersDB::class.java, "UserTable"
-        ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
-        val dao = db.userDao()
-        val liste = dao.getAllUsers()
-        liste.forEach { item -> Log.i("READ", item.toString()) }
-    }
+//    private fun lire() {
+//        val db = Room.databaseBuilder(
+//            applicationContext,
+//            UsersDB::class.java, "UserTable"
+//        ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
+//        val dao = db.userDao()
+//        val liste = dao.getAllUsers()
+//        liste.forEach { item -> Log.i("READ", item.toString()) }
+//    }
 }
