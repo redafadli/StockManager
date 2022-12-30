@@ -3,7 +3,6 @@ package com.example.stockmanager.activity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +11,6 @@ import com.example.stockmanager.R
 import com.example.stockmanager.db_devices.Device
 import com.example.stockmanager.db_devices.DeviceRecord
 import com.example.stockmanager.db_devices.DevicesDB
-import com.example.stockmanager.db_users.UserRecord
-import com.example.stockmanager.db_users.UsersDB
 import kotlinx.android.synthetic.main.activity_add_new_device.*
 
 class AddNewDevice : AppCompatActivity() {

@@ -5,13 +5,9 @@
         android:title="Home"/>
 <!--        android:icon="@drawable/ic_person_foreground"-->
         />
-    <item
-        android:id="@+id/add_device"
-        android:title="Add device"/>
-    <!--        android:icon="@drawable/ic_person_foreground"-->
 
     <item
-        android:id="@+id/sign_up"
-        android:title="Sign up"/>
+        android:id="@+id/profile"
+        android:title="Profile"/>
     <!--        android:icon="@drawable/ic_person_foreground"-->
 </menu>
