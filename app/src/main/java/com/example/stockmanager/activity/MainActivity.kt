@@ -22,18 +22,21 @@ class MainActivity : AppCompatActivity() {
             .allowMainThreadQueries().build()
 
         add_device.setOnClickListener {
-            val intent = Intent(this, AddNewDevice::class.java)
-            startActivity(intent)
+            val addDeviceIntent = Intent(this, AddNewDevice::class.java)
+            startActivity(addDeviceIntent)
         }
 
         add_user.setOnClickListener {
-            val intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
+            val addUserIntent = Intent(this, SignUp::class.java)
+            startActivity(addUserIntent)
         }
-        devicesDatabase.deviceDao().insertDevice(DeviceRecord("Tablette", "test", "test", "test"
-        ,"test"))
-        val allDevices = devicesDatabase.deviceDao().getAllDevices()
 
+        to_users.setOnClickListener {
+            val toUsersIntent = Intent(this, Users::class.java)
+            startActivity(toUsersIntent)
+        }
+
+        val allDevices = devicesDatabase.deviceDao().getAllDevices()
 
         recycler_devices.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)

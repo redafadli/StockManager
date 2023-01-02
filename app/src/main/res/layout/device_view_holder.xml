@@ -61,7 +61,7 @@
         <ImageView
             android:id="@+id/img_qr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="125dp"/>
     </LinearLayout>
 
 </LinearLayout>

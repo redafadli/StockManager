@@ -26,6 +26,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/to_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Users"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toStartOf="@+id/add_device"
+        app:layout_constraintStart_toEndOf="@+id/add_user" />
+
+    <Button
         android:id="@+id/add_device"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -39,7 +39,7 @@ class AddNewDevice : AppCompatActivity() {
         val spinner: Spinner = findViewById(R.id.spinner_type)
         val type : String = spinner.selectedItem.toString()
         val device = Device(0, type, marque_modele.text.toString(), num_ref.text.toString(),
-            site_web.text.toString(), qr_code.text.toString())
+            site_web.text.toString(), qr_code.text.toString(), "Remise")
         val db = Room.databaseBuilder(
             applicationContext, DevicesDB::class.java, "DeviceTable"
         ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
