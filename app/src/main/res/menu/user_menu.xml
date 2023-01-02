@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/delete_user"
+        android:title="Supprimer"/>
+
+    <item
+        android:id="@+id/add_right"
+        android:title="Ajouter autorisation de modification"/>
+
+    <item
+        android:id="@+id/remove_right"
+        android:title="Enlever autorisation de modification"/>
+
+</menu>

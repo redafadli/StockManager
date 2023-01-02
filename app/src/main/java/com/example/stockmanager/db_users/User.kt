@@ -3,9 +3,9 @@ package com.example.stockmanager.db_users
 class User() {
 
     var id : Int = 0
-    private var login = ""
-    private var pwd : String = ""
-    private var rights : Boolean = false
+    var login = ""
+    var pwd : String = ""
+    var rights : Boolean = false
 
     constructor(i : Int, l: String, p: String, r : Boolean) : this() {
         id = i

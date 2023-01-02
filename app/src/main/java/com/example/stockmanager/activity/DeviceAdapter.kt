@@ -1,11 +1,15 @@
 package com.example.stockmanager.activity
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.example.stockmanager.R
 import com.example.stockmanager.db_devices.DeviceRecord
+import com.example.stockmanager.db_devices.DevicesDB
 import kotlinx.android.synthetic.main.device_view_holder.view.*
 
 class DeviceAdapter(private val allDevices: List<DeviceRecord>) : RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
@@ -21,6 +25,37 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) : RecyclerView.A
         holder.itemView.device_marque.text = allDevices[position].marque_modele
         holder.itemView.device_num_ref.text = allDevices[position].num_ref
         holder.itemView.device_site.text = allDevices[position].site_web
+        holder.itemView.device_options.setOnClickListener { it ->
+            val popup = PopupMenu(holder.itemView.context, it)
+            popup.inflate(R.menu.device_menu)
+            popup.show()
+            popup.setOnMenuItemClickListener {
+                val db = Room.databaseBuilder(
+                    holder.itemView.context, DevicesDB::class.java, "DeviceTable"
+                ).allowMainThreadQueries().build()
+
+                val d1 = allDevices[position]
+                val dao = db.deviceDao()
+
+                when(it.itemId) {
+                    R.id.delete_device -> {
+                        dao.deleteDevice(d1)
+                        true
+                    }
+                    R.id.edit_device -> {
+                        val editDeviceIntent = Intent(holder.itemView.context, EditDevice::class.java)
+                        editDeviceIntent.putExtra("device_marque", d1.marque_modele)
+                        editDeviceIntent.putExtra("num_ref", d1.num_ref)
+                        editDeviceIntent.putExtra("site_web", d1.site_web)
+                        holder.itemView.context.startActivity(editDeviceIntent)
+                        true
+                    }
+                    else -> {
+                        true
+                    }
+                }
+            }
+        }
     }
 
     override fun getItemCount(): Int = allDevices.size

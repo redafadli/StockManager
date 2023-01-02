@@ -21,14 +21,14 @@ class AddNewDevice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_device)
 
-        val spinner: Spinner = findViewById(R.id.spinner_type)
+        val spinner: Spinner = findViewById(R.id.edit_spinner_type)
         ArrayAdapter.createFromResource(this, R.array.types, android.R.layout.simple_spinner_item)
             .also { adapter ->
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spinner.adapter = adapter
             }
         add_device_button.setOnClickListener{
-            if (marque_modele.text.isNotEmpty()){
+            if (edit_marque_modele.text.isNotEmpty()) {
                 ecrire()
                 lire()
             }
@@ -36,10 +36,10 @@ class AddNewDevice : AppCompatActivity() {
     }
 
     private fun ecrire() {
-        val spinner: Spinner = findViewById(R.id.spinner_type)
+        val spinner: Spinner = findViewById(R.id.edit_spinner_type)
         val type : String = spinner.selectedItem.toString()
-        val device = Device(0, type, marque_modele.text.toString(), num_ref.text.toString(),
-            site_web.text.toString(), qr_code.text.toString(), "Remise")
+        val device = Device(0, type, edit_marque_modele.text.toString(), edit_num_ref.text.toString(),
+            edit_site_web.text.toString(), edit_qr_code.text.toString(), "Remise")
         val db = Room.databaseBuilder(
             applicationContext, DevicesDB::class.java, "DeviceTable"
         ).fallbackToDestructiveMigration().allowMainThreadQueries().build()

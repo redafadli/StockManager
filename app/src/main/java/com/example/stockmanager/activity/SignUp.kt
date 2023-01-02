@@ -25,12 +25,12 @@ class SignUp : AppCompatActivity() {
     }
 
     private fun ecrire() {
-        val u = User(0, email.text.toString(), pass.text.toString())
+        val u = User(0, email.text.toString(), pass.text.toString(), false)
         val db = Room.databaseBuilder(
             applicationContext, UsersDB::class.java, "UserTable"
         ).allowMainThreadQueries().build()
         val dao = db.userDao()
-        val u1 = UserRecord(u.login, u.pwd)
+        val u1 = UserRecord(u.login, u.pwd, u.rights)
         dao.insertUser(u1)
         Toast.makeText(this, u.toString(), Toast.LENGTH_LONG).show()
     }

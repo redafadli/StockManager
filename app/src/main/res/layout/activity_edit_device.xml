@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Add a new device"
+        android:text="Edit a device"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,47 +23,25 @@
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
-        android:textSize="15sp"
         android:ems="10"
         android:hint="Marque et modèle"
         android:inputType="textPersonName"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <Spinner
-        android:id="@+id/edit_spinner_type"
-        android:layout_width="161dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="8dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:text="Type"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="118dp"
         android:text="Marque et modèle de l’appareil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_spinner_type" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView8"
@@ -105,8 +83,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="N° de référence"
-        android:textSize="15sp"
         android:inputType="textPersonName"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,8 +97,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Site web"
-        android:textSize="15sp"
         android:inputType="textPersonName"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,14 +111,14 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="QR code"
-        android:textSize="15sp"
         android:inputType="textPersonName"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
-        android:id="@+id/add_device_button"
+        android:id="@+id/edit_device_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

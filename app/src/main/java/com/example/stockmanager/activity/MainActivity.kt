@@ -1,13 +1,11 @@
 package com.example.stockmanager.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.stockmanager.R
-import com.example.stockmanager.db_devices.DeviceRecord
 import com.example.stockmanager.db_devices.DevicesDB
 import kotlinx.android.synthetic.main.activity_main.*
 
