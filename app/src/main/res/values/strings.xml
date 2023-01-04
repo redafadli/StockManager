@@ -6,6 +6,11 @@
         <item>Téléphone</item>
         <item>Tablette</item>
     </string-array>
+
+    <string-array name="status">
+        <item>Remise</item>
+        <item>Emprunt</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

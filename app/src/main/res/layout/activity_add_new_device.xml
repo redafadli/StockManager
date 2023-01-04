@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_marque_modele"
+        android:id="@+id/add_marque_modele"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -30,21 +30,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <Spinner
-        android:id="@+id/edit_spinner_type"
-        android:layout_width="161dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="8dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/marque_modele_text" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/type_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
@@ -54,8 +43,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/add_spinner_type"
+        android:layout_width="161dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_text" />
+
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/marque_modele_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -63,10 +63,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_spinner_type" />
+        app:layout_constraintTop_toBottomOf="@+id/add_spinner_type" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/num_ref_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -74,10 +74,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_marque_modele" />
+        app:layout_constraintTop_toBottomOf="@+id/add_marque_modele" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/site_web_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -85,10 +85,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_num_ref" />
+        app:layout_constraintTop_toBottomOf="@+id/add_num_ref" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/qr_code_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -96,10 +96,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_site_web" />
+        app:layout_constraintTop_toBottomOf="@+id/add_site_web" />
 
     <EditText
-        android:id="@+id/edit_num_ref"
+        android:id="@+id/add_num_ref"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -110,10 +110,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/num_ref_text" />
 
     <EditText
-        android:id="@+id/edit_site_web"
+        android:id="@+id/add_site_web"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -124,10 +124,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/site_web_text" />
 
     <EditText
-        android:id="@+id/edit_qr_code"
+        android:id="@+id/add_qr_code"
         android:layout_width="315dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -137,7 +137,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/qr_code_text" />
 
     <Button
         android:id="@+id/add_device_button"
@@ -148,6 +148,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_qr_code" />
+        app:layout_constraintTop_toBottomOf="@+id/add_qr_code" />
+
+    <ImageView
+        android:id="@+id/imageCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
