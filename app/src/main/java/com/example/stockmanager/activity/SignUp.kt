@@ -50,6 +50,5 @@ class SignUp : AppCompatActivity() {
         val dao = db.userDao()
         val u1 = UserRecord(email_log_in.text.toString(), pass_log_in.text.toString(), rights)
         dao.insertUser(u1)
-        Toast.makeText(this, u1.toString(), Toast.LENGTH_LONG).show()
     }
 }

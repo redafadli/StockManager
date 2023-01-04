@@ -11,7 +11,6 @@ import com.example.stockmanager.db_devices.DevicesDB
 import kotlinx.android.synthetic.main.activity_edit_device.*
 import kotlinx.android.synthetic.main.activity_edit_device.add_marque_modele
 import kotlinx.android.synthetic.main.activity_edit_device.add_num_ref
-import kotlinx.android.synthetic.main.activity_edit_device.add_qr_code
 import kotlinx.android.synthetic.main.activity_edit_device.add_site_web
 
 class EditDevice : AppCompatActivity() {
@@ -40,19 +39,17 @@ class EditDevice : AppCompatActivity() {
             add_marque_modele.setText(extras.getString("device_marque"))
             add_num_ref.setText(extras.getString("num_ref"))
             add_site_web.setText(extras.getString("site_web"))
-            add_qr_code.setText(extras.getString("qr_code"))
 
             edit_device_button.setOnClickListener {
                 val db = Room.databaseBuilder(
                     applicationContext, DevicesDB::class.java, "DeviceTable"
-                ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
+                ).allowMainThreadQueries().build()
                 val dao = db.deviceDao()
                 dao.updateDevice(
                     typeSpinner.selectedItem.toString(),
                     add_marque_modele.text.toString(),
                     add_num_ref.text.toString(),
                     add_site_web.text.toString(),
-                    add_qr_code.text.toString(),
                     statusSpinner.selectedItem.toString(),
                     extras.getInt("id")
                 )
@@ -60,6 +57,5 @@ class EditDevice : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
     }
 }

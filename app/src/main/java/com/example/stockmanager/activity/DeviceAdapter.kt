@@ -3,6 +3,7 @@ package com.example.stockmanager.activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.webkit.WebViewClient
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -37,6 +38,12 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) :
         holder.itemView.device_marque.text = allDevices[position].marque_modele
         holder.itemView.device_num_ref.text = allDevices[position].num_ref
         holder.itemView.device_site.text = allDevices[position].site_web
+        holder.itemView.device_site.setOnClickListener{
+            val intent = Intent(holder.itemView.context, WebView::class.java)
+            intent.putExtra("site_web", allDevices[position].site_web)
+            holder.itemView.context.startActivity(intent)
+        }
+
         holder.itemView.device_state.text = allDevices[position].state
         val id: Int = sharedPreference.getInt("id", 1)
         val currentUser = dao.getUser(id)

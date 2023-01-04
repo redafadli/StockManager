@@ -14,6 +14,7 @@ import com.example.stockmanager.R
 import com.example.stockmanager.db_devices.DevicesDB
 import com.example.stockmanager.db_users.UsersDB
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_web_view.*
 import kotlinx.android.synthetic.main.device_view_holder.*
 
 
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.stockmanager.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         //load devices
         val devicesDatabase = databaseBuilder(
@@ -64,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             val toUsersIntent = Intent(this, Users::class.java)
             val logInIntent = Intent(this, LogIn::class.java)
 
-
             val sharedPreference = getSharedPreferences("application", Context.MODE_PRIVATE)
 
             when (it.itemId) {
@@ -78,9 +78,4 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(com.example.stockmanager.R.menu.toolbar_menu, menu)
-//        return true
-//    }
 }

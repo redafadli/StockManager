@@ -1,11 +1,12 @@
 package com.example.stockmanager.db_devices
 
 import androidx.room.*
+import com.google.zxing.MultiFormatWriter
 
 
 @Entity(tableName = "DeviceTable")
 data class DeviceRecord(var type : String, var marque_modele : String, var num_ref : String,
-                        var site_web: String, var qr_code : String, var state : String) {
+                        var site_web: String, var state : String) {
 
     @ColumnInfo(name="id") @PrimaryKey(autoGenerate = true) var id: Int=0
 }
