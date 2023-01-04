@@ -31,17 +31,19 @@ class UserAdapter(private val allUsers : List<UserRecord>) : RecyclerView.Adapte
                     holder.itemView.context, UsersDB::class.java, "UserTable"
                 ).allowMainThreadQueries().build()
 
-                val u1 = allUsers[position]
                 val dao = db.userDao()
+                val u1 = allUsers[position]
 
                 when (it.itemId) {
-                    R.id.add_right -> { u1.rights = true
-                        Toast.makeText(holder.itemView.context, u1.rights.toString(), Toast.LENGTH_LONG).show()
+                    R.id.add_right -> {
+                        dao.updateUserRights(u1.login,u1.pwd,true, u1.id)
+                        Toast.makeText(holder.itemView.context, dao.getUser(u1.id).rights.toString(), Toast.LENGTH_LONG).show()
                         true
                     }
 
-                    R.id.remove_right -> {u1.rights = false
-                        Toast.makeText(holder.itemView.context, u1.rights.toString(), Toast.LENGTH_LONG).show()
+                    R.id.remove_right -> {
+                        dao.updateUserRights(u1.login,u1.pwd,false, u1.id)
+                        Toast.makeText(holder.itemView.context, dao.getUser(u1.id).rights.toString(), Toast.LENGTH_LONG).show()
                         true
                     }
 

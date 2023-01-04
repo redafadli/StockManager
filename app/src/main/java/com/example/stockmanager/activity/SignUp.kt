@@ -1,12 +1,12 @@
 package com.example.stockmanager.activity
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.room.Room
 import com.example.stockmanager.R
-import com.example.stockmanager.db_users.User
 import com.example.stockmanager.db_users.UserRecord
 import com.example.stockmanager.db_users.UsersDB
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -16,32 +16,40 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        //check if the app is launched for the first time
+        val sharedPreference =  getSharedPreferences("application", Context.MODE_PRIVATE)
+
         sign_up_button.setOnClickListener {
-            if (email.toString().isNotEmpty()) {
-                ecrire()
-//                lire()
+            if (pass_log_in.text.length <= 4) {
+                Toast.makeText(
+                    this,
+                    "Veuillez entrez un mdp de plus de 4 caractères", Toast.LENGTH_LONG
+                ).show()
+            } else if (email_log_in.text.isEmpty()){
+                Toast.makeText(
+                    this,
+                    "Veuillez entrez votre email", Toast.LENGTH_LONG
+                ).show()
+            } else {
+                val logInIntent = Intent(this, LogIn::class.java)
+                if(sharedPreference.getBoolean("first_time", true)){
+                    addUserToDB(true)
+                    sharedPreference.edit().putBoolean("first_time", false).apply()
+                    startActivity(logInIntent)
+                } else {
+                    addUserToDB(false)
+                    startActivity(logInIntent)
+                }
             }
         }
     }
-
-    private fun ecrire() {
-        val u = User(0, email.text.toString(), pass.text.toString(), false)
+    private fun addUserToDB(rights : Boolean){
         val db = Room.databaseBuilder(
             applicationContext, UsersDB::class.java, "UserTable"
         ).allowMainThreadQueries().build()
         val dao = db.userDao()
-        val u1 = UserRecord(u.login, u.pwd, u.rights)
+        val u1 = UserRecord(email_log_in.text.toString(), pass_log_in.text.toString(), rights)
         dao.insertUser(u1)
-        Toast.makeText(this, u.toString(), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, u1.toString(), Toast.LENGTH_LONG).show()
     }
-
-//    private fun lire() {
-//        val db = Room.databaseBuilder(
-//            applicationContext,
-//            UsersDB::class.java, "UserTable"
-//        ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
-//        val dao = db.userDao()
-//        val liste = dao.getAllUsers()
-//        liste.forEach { item -> Log.i("READ", item.toString()) }
-//    }
 }

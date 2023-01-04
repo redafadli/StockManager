@@ -25,6 +25,7 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) : RecyclerView.A
         holder.itemView.device_marque.text = allDevices[position].marque_modele
         holder.itemView.device_num_ref.text = allDevices[position].num_ref
         holder.itemView.device_site.text = allDevices[position].site_web
+        holder.itemView.device_state.text = allDevices[position].state
         holder.itemView.device_options.setOnClickListener { it ->
             val popup = PopupMenu(holder.itemView.context, it)
             popup.inflate(R.menu.device_menu)
@@ -40,20 +41,19 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) : RecyclerView.A
                 when(it.itemId) {
                     R.id.delete_device -> {
                         dao.deleteDevice(d1)
-                        true
                     }
                     R.id.edit_device -> {
                         val editDeviceIntent = Intent(holder.itemView.context, EditDevice::class.java)
+                        editDeviceIntent.putExtra("id", d1.id)
+                        editDeviceIntent.putExtra("type", d1.type)
                         editDeviceIntent.putExtra("device_marque", d1.marque_modele)
                         editDeviceIntent.putExtra("num_ref", d1.num_ref)
                         editDeviceIntent.putExtra("site_web", d1.site_web)
+                        editDeviceIntent.putExtra("state", d1.state)
                         holder.itemView.context.startActivity(editDeviceIntent)
-                        true
-                    }
-                    else -> {
-                        true
                     }
                 }
+                true
             }
         }
     }
@@ -61,5 +61,4 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) : RecyclerView.A
     override fun getItemCount(): Int = allDevices.size
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
-
 }

@@ -50,6 +50,16 @@
             android:text="Site web"
             android:textColor="@color/black"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/device_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:text="Status"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +71,7 @@
         <ImageView
             android:id="@+id/img_qr"
             android:layout_width="match_parent"
-            android:layout_height="125dp" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <ImageView

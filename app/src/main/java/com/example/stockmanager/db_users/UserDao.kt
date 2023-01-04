@@ -8,14 +8,14 @@ interface UserDao {
     @Query("SELECT * FROM UserTable")
     fun getAllUsers(): List<UserRecord>
 
-    @Query("SELECT * FROM UserTable WHERE login = :login")
-    fun getUser(login: String): UserRecord
+    @Query("SELECT * FROM UserTable WHERE id = :id")
+    fun getUser(id: Int): UserRecord
 
     @Insert
     fun insertUser(vararg listCategories: UserRecord)
 
-    @Update
-    fun updateUser(task: UserRecord)
+    @Query("UPDATE UserTable SET login= :login, pwd= :pwd, rights= :rights WHERE id LIKE :id")
+    fun updateUserRights(login : String, pwd: String, rights: Boolean, id : Int)
 
     @Delete
     fun deleteUser(task: UserRecord)
