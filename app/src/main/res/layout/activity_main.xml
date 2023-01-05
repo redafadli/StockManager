@@ -9,14 +9,15 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mainToolbar"
-        app:title="Stock Manager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/primary"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolbar_menu" />
+        app:menu="@menu/toolbar_menu"
+        app:title="Stock Manager"
+        app:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_devices"

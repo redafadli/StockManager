@@ -7,7 +7,4 @@
     <item
         android:id="@+id/delete_device"
         android:title="Supprimer"/>
-    <item
-        android:id="@+id/change_device_status"
-        android:title="Changer l'état"/>
 </menu>

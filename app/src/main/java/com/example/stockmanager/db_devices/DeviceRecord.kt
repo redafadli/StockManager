@@ -1,8 +1,6 @@
 package com.example.stockmanager.db_devices
 
 import androidx.room.*
-import com.google.zxing.MultiFormatWriter
-
 
 @Entity(tableName = "DeviceTable")
 data class DeviceRecord(var type : String, var marque_modele : String, var num_ref : String,

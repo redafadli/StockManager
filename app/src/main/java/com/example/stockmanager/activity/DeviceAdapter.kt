@@ -43,14 +43,12 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) :
             intent.putExtra("site_web", allDevices[position].site_web)
             holder.itemView.context.startActivity(intent)
         }
-
         holder.itemView.device_state.text = allDevices[position].state
         val id: Int = sharedPreference.getInt("id", 1)
         val currentUser = dao.getUser(id)
         if (!currentUser.rights) {
             holder.itemView.device_options.isVisible = false
         } else {
-
             holder.itemView.device_options.setOnClickListener { it ->
                 val popup = PopupMenu(holder.itemView.context, it)
                 popup.inflate(R.menu.device_menu)

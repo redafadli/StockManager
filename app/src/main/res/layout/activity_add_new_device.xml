@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/textView5"
-        style="@style/Titles"
+        style="@style/titles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -20,7 +20,9 @@
 
     <EditText
         android:id="@+id/add_marque_modele"
-        android:layout_width="315dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="15sp"
@@ -36,12 +38,12 @@
         android:id="@+id/type_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="128dp"
         android:text="Type"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/add_spinner_type"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Spinner
         android:id="@+id/add_spinner_type"
@@ -50,8 +52,8 @@
         android:layout_marginTop="8dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/marque_modele_text"
         app:layout_constraintTop_toBottomOf="@+id/type_text" />
 
     <TextView
@@ -61,8 +63,8 @@
         android:layout_marginTop="24dp"
         android:text="Marque et modèle de l’appareil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/add_marque_modele"
         app:layout_constraintTop_toBottomOf="@+id/add_spinner_type" />
 
     <TextView
@@ -72,8 +74,8 @@
         android:layout_marginTop="24dp"
         android:text="N° de référence"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/add_num_ref"
         app:layout_constraintTop_toBottomOf="@+id/add_marque_modele" />
 
     <TextView
@@ -83,13 +85,15 @@
         android:layout_marginTop="24dp"
         android:text="Site web"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/add_site_web"
         app:layout_constraintTop_toBottomOf="@+id/add_num_ref" />
 
     <EditText
         android:id="@+id/add_num_ref"
-        android:layout_width="315dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
@@ -103,7 +107,9 @@
 
     <EditText
         android:id="@+id/add_site_web"
-        android:layout_width="315dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
@@ -119,7 +125,7 @@
         android:id="@+id/add_device_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:text="Ajouter l'appareil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

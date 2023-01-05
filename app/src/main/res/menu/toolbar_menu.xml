@@ -2,13 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/log_out"
-        android:title="Log out"/>
+        android:title="Se déconnecter"
+        android:icon="@drawable/ic_baseline_logout_24"/>
 
     <item
         android:id="@+id/add_device_toolbar"
-        android:title="Add a new device"/>
+        android:title="Ajouter un appareil"
+        android:icon="@drawable/ic_baseline_add_24"/>
 
     <item
         android:id="@+id/to_users_toolbar"
-        android:title="Users list"/>
+        android:title="Utilisateurs"
+        android:icon="@drawable/ic_baseline_group_24"/>
 </menu>

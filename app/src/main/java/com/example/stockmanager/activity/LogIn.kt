@@ -29,7 +29,6 @@ class LogIn : AppCompatActivity() {
         }
 
         log_in_button.setOnClickListener {
-
             if (email_log_in.text.toString().isEmpty()) {
                 Toast.makeText(this, "Entrez votre email", Toast.LENGTH_LONG).show()
             } else if (pass_log_in.text.toString().isEmpty()) {
@@ -44,7 +43,7 @@ class LogIn : AppCompatActivity() {
                         editor.apply()
                         val mainIntent = Intent(this, MainActivity::class.java)
                         startActivity(mainIntent)
-                    } else {
+                    } else if (email_log_in.text.toString() != user.login && pass_log_in.text.toString() != user.pwd) {
                         Toast.makeText(this, "Informations incorrectes", Toast.LENGTH_LONG).show()
                     }
                 }

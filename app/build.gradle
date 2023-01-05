@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.stockmanager"
-        minSdk 24
+        minSdk 21
         //noinspection ExpiredTargetSdkVersion
         targetSdk 33
         versionCode 1
@@ -50,8 +50,6 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
-    //qr code
-    implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
     // Dependencies for working with Architecture components
     // You'll probably have to update the version numbers in build.gradle (Project)
     // Room components
