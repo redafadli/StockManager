@@ -1,9 +1,11 @@
 package com.example.stockmanager.activity
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.room.Room
 import com.example.stockmanager.R
@@ -43,8 +45,8 @@ class LogIn : AppCompatActivity() {
                         editor.apply()
                         val mainIntent = Intent(this, MainActivity::class.java)
                         startActivity(mainIntent)
-                    } else if (email_log_in.text.toString() != user.login && pass_log_in.text.toString() != user.pwd) {
-                        Toast.makeText(this, "Informations incorrectes", Toast.LENGTH_LONG).show()
+                    } else {
+                        //Toast.makeText(this, "Informations incorrectes", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

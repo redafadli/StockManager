@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.room.Room
 import com.example.stockmanager.R
 import com.example.stockmanager.db_devices.DevicesDB
@@ -53,6 +54,7 @@ class EditDevice : AppCompatActivity() {
                     statusSpinner.selectedItem.toString(),
                     extras.getInt("id")
                 )
+                Toast.makeText(this, "Informations changées avec succés", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }

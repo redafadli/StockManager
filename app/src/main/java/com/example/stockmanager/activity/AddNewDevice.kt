@@ -46,7 +46,6 @@ class AddNewDevice : AppCompatActivity() {
                 dao.insertDevice(d1)
                 val mainIntent = Intent(this, MainActivity::class.java)
                 startActivity(mainIntent)
-                Toast.makeText(this, d1.toString(), Toast.LENGTH_LONG).show()
             }
         }
     }

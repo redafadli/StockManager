@@ -16,7 +16,6 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        //check if the app is launched for the first time
         val sharedPreference =  getSharedPreferences("application", Context.MODE_PRIVATE)
 
         sign_up_button.setOnClickListener {
@@ -32,6 +31,7 @@ class SignUp : AppCompatActivity() {
                 ).show()
             } else {
                 val logInIntent = Intent(this, LogIn::class.java)
+                //check if the app is launched for the first time
                 if(sharedPreference.getBoolean("first_time", true)){
                     addUserToDB(true)
                     sharedPreference.edit().putBoolean("first_time", false).apply()

@@ -2,6 +2,7 @@ package com.example.stockmanager.activity
 
 import android.app.ProgressDialog.show
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,7 +43,7 @@ class UserAdapter(private val allUsers: List<UserRecord>) :
                     R.id.add_right -> {
                         dao.updateUserRights(u1.login, u1.pwd, true, u1.id)
                         Toast.makeText(
-                            holder.itemView.context, dao.getUser(u1.id).login + "a les drois : "
+                            holder.itemView.context, dao.getUser(u1.id).login + " a les drois : "
                                     + dao.getUser(u1.id).rights.toString(), Toast.LENGTH_LONG
                         ).show()
                         true
@@ -51,7 +52,7 @@ class UserAdapter(private val allUsers: List<UserRecord>) :
                     R.id.remove_right -> {
                         dao.updateUserRights(u1.login, u1.pwd, false, u1.id)
                         Toast.makeText(
-                            holder.itemView.context, dao.getUser(u1.id).login + "a les drois : "
+                            holder.itemView.context, dao.getUser(u1.id).login + " a les drois : "
                                     + dao.getUser(u1.id).rights.toString(), Toast.LENGTH_LONG
                         ).show()
                         true
@@ -59,6 +60,8 @@ class UserAdapter(private val allUsers: List<UserRecord>) :
 
                     R.id.delete_user -> {
                         dao.deleteUser(u1)
+                        val intent = Intent(holder.itemView.context, Users::class.java)
+                        holder.itemView.context.startActivity(intent)
                         true
                     }
 

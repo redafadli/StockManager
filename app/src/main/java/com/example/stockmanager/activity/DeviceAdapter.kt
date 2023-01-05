@@ -7,6 +7,7 @@ import android.webkit.WebViewClient
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
@@ -18,7 +19,6 @@ import kotlinx.android.synthetic.main.device_view_holder.view.*
 
 class DeviceAdapter(private val allDevices: List<DeviceRecord>) :
     RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -64,6 +64,8 @@ class DeviceAdapter(private val allDevices: List<DeviceRecord>) :
                     when (it.itemId) {
                         R.id.delete_device -> {
                             dao.deleteDevice(d1)
+                            val intent = Intent(holder.itemView.context, MainActivity::class.java)
+                            holder.itemView.context.startActivity(intent)
                         }
                         R.id.edit_device -> {
                             val editDeviceIntent =

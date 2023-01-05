@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Stock manager</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="mot_de_pass">Mot de pass</string>
     <string-array name="types">
         <item>Téléphone</item>
         <item>Tablette</item>
@@ -13,4 +13,18 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ajouter_un_appareil">Ajouter un appareil</string>
+    <string name="marque">Marque et modèle</string>
+    <string name="type">Type</string>
+    <string name="marque_et_mod_de_lappareil">Marque et modèle de l’appareil</string>
+    <string name="n_de_ref">N° de référence</string>
+    <string name="site_web">Site web</string>
+    <string name="ajouter_l_appareil">Ajouter l\'appareil</string>
+    <string name="modifier_l_appareil">Modifier l\'appareil</string>
+    <string name="state">State</string>
+    <string name="sauvegarder_l_appareil">Sauvegarder l\'appareil</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="s_inscrire_si_vous_n_avez_pas_un_compte">S\'inscrire si vous n\'avez pas un compte</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="user_s_email">User\'s email</string>
 </resources>
